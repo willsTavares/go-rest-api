@@ -17,7 +17,7 @@
 ### Directory Structure
 
 - `/controllers`: Logic for handling requests and responses. Controllers parse requests, interact with models, and return responses.
-- `/db`: Database connection configurations and the database instance setup.
+- `/database`: Database connection configurations and the database instance setup.
 - `/migrations`: Scripts for database migrations to create and update the database schema.
 - `/models`: Data models and associated business logic. Defines the structure of the database tables and their relationships.
 - `/routes`: Route definitions and their association with controllers. Maps endpoints to controller functions.
