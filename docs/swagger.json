@@ -1,0 +1,183 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/personalities": {
+            "get": {
+                "description": "get personalities",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Personalities"
+                ],
+                "summary": "List all personalities",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Personality"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "create personalities",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Personalities"
+                ],
+                "summary": "Create a personality",
+                "parameters": [
+                    {
+                        "description": "Name",
+                        "name": "name",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "History",
+                        "name": "history",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Personality"
+                        }
+                    }
+                }
+            }
+        },
+        "/personalities/{id}": {
+            "get": {
+                "description": "get personality by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Personalities"
+                ],
+                "summary": "Get a personality by ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Personality ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Personality"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "edit personality by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Personalities"
+                ],
+                "summary": "Edit a personality by ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Personality ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Personality"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "delete personality by ID",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Personalities"
+                ],
+                "summary": "Delete a personality by ID",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Personality ID",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/models.Personality"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Personality": {
+            "type": "object",
+            "properties": {
+                "history": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+definitions:
+  models.Personality:
+    properties:
+      history:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /personalities:
+    get:
+      consumes:
+      - application/json
+      description: get personalities
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Personality'
+            type: array
+      summary: List all personalities
+      tags:
+      - Personalities
+    post:
+      consumes:
+      - application/json
+      description: create personalities
+      parameters:
+      - description: Name
+        in: body
+        name: name
+        required: true
+        schema:
+          type: string
+      - description: History
+        in: body
+        name: history
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Personality'
+      summary: Create a personality
+      tags:
+      - Personalities
+  /personalities/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete personality by ID
+      parameters:
+      - description: Personality ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Personality'
+      summary: Delete a personality by ID
+      tags:
+      - Personalities
+    get:
+      consumes:
+      - application/json
+      description: get personality by ID
+      parameters:
+      - description: Personality ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Personality'
+      summary: Get a personality by ID
+      tags:
+      - Personalities
+    put:
+      consumes:
+      - application/json
+      description: edit personality by ID
+      parameters:
+      - description: Personality ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Personality'
+      summary: Edit a personality by ID
+      tags:
+      - Personalities
+swagger: "2.0"
