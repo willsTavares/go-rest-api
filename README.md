@@ -1,3 +1,8 @@
+![GitHub repo size](https://img.shields.io/github/repo-size/willsTavares/go-rest-api?style=for-the-badge)
+![GitHub language count](https://img.shields.io/github/languages/count/willsTavares/go-rest-api?style=for-the-badge)
+![GitHub forks](https://img.shields.io/github/forks/willsTavares/go-rest-api?style=for-the-badge)
+![GitHub open issues](https://img.shields.io/github/issues/willsTavares/go-rest-api?style=for-the-badge)
+
 This Go project is a RESTful API designed to manage a collection of personalities. It provides endpoints for creating, retrieving, updating, and deleting personality records. 
 
 Each personality is represented by a unique ID and contains details that can be accessed or modified through the API. The project leverages the Gorilla Mux router for handling HTTP requests and GORM for database operations, ensuring efficient data manipulation and retrieval. With a focus on simplicity and functionality, this API serves as a robust backend for applications requiring personality data management.
